@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "build": "tsc",
-    "start": "node dist/server.js"
+    "start": "node dist/server.js",
+    "get-token": "tsx scripts/get-token.ts"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +17,8 @@
     "@supabase/supabase-js": "^2.112.3",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "googleapis": "^175.0.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
