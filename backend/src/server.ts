@@ -2,9 +2,10 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import validationRoutes from './routes/validation.routes';
-import queueRoutes from './routes/queue.routes'; // <-- new import
+import queueRoutes from './routes/queue.routes';
 import processQueueRoutes from './routes/processQueue.routes';
-
+import statsRoutes from './routes/stats.routes'; // <-- new import
+import templateRoutes from './routes/template.routes';
 
 dotenv.config();
 
@@ -19,8 +20,10 @@ app.get('/health', (req, res) => {
 
 // Routes
 app.use('/api', validationRoutes);
-app.use('/api', queueRoutes); // <-- new route
+app.use('/api', queueRoutes);
 app.use('/api', processQueueRoutes);
+app.use('/api', statsRoutes); // <-- new route
+app.use('/api', templateRoutes);
 
 
 const PORT = process.env.PORT || 5000;
