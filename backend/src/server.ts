@@ -3,6 +3,8 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import validationRoutes from './routes/validation.routes';
 import queueRoutes from './routes/queue.routes'; // <-- new import
+import processQueueRoutes from './routes/processQueue.routes';
+
 
 dotenv.config();
 
@@ -18,6 +20,8 @@ app.get('/health', (req, res) => {
 // Routes
 app.use('/api', validationRoutes);
 app.use('/api', queueRoutes); // <-- new route
+app.use('/api', processQueueRoutes);
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
